@@ -4,9 +4,8 @@ from collections import deque
 def dfs(graph, v):
     visited = list()
     need_visit = list()
-    
     need_visit.append(v)
-    
+
     while need_visit:
         node = need_visit.pop()
         if node not in visited:
@@ -17,9 +16,8 @@ def dfs(graph, v):
 def bfs(graph, v):
     visited = list()
     need_visit = deque()
-    
     need_visit.append(v)
-    
+
     while need_visit:
         node = need_visit.popleft()
         if node not in visited:
