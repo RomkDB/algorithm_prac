@@ -9,13 +9,18 @@ t_num = []
 for i in s:
     t_num.append(s_count[i])
 
+# 계속 더해서 1개가 남을 때까지 반복
 while len(t_num) > 1:
+    # 더한 숫자를 담아두는 리스트
     temp_list = []
+    # 2개씩 짝을 지어 더해서 리스트에 저장
     for i in range(0, len(t_num)-1, 2):
         sum_num = t_num[i] + t_num[i+1]
         temp_list.append(sum_num % 10)
+    # 짝이 이루어지지 않는 마지막 숫자가 있는 경우
     if len(t_num) % 2 == 1:
         temp_list.append(t_num[-1])
+    # 더한 숫자를 담아두는 리스트를 다음 반복에 사용하기 위해
     t_num = temp_list
 
 total = t_num[0]
